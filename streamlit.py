@@ -97,23 +97,23 @@ if search_button:
         st.plotly_chart(fig3)   
 
 
-else: 
-    st.sidebar.write("Você pesquisou pelo endereço: Forataleza")
-    ### Pegando as quantidades de cnae destitos ###
-    cnae = len(df_lat_lon['CNAE FISCAL PRINCIPAL'].drop_duplicates())
-    st.sidebar.write(f"No endereço selecionado contém **{cnae}** CNAES(s) distintos")
-    ### Pegando as quantidades de cnpj destitos ###
-    cnpj = len(df_lat_lon['CNPJ BÁSICO'].drop_duplicates())
-    st.sidebar.write(f"No endereço selecionado contém **{cnpj}** CNPJ(s) Basicos distintos")
+# else: 
+#     st.sidebar.write("Você pesquisou pelo endereço: Forataleza")
+#     ### Pegando as quantidades de cnae destitos ###
+#     cnae = len(df_lat_lon['CNAE FISCAL PRINCIPAL'].drop_duplicates())
+#     st.sidebar.write(f"No endereço selecionado contém **{cnae}** CNAES(s) distintos")
+#     ### Pegando as quantidades de cnpj destitos ###
+#     cnpj = len(df_lat_lon['CNPJ BÁSICO'].drop_duplicates())
+#     st.sidebar.write(f"No endereço selecionado contém **{cnpj}** CNPJ(s) Basicos distintos")
 
-    ## plotando grafico ##
-    fig, ax = plt.subplots(figsize=(10,15))
+#     ## plotando grafico ##
+#     fig, ax = plt.subplots(figsize=(10,15))
 
-    Fortaleza_polygon.to_crs("EPSG:3857").plot(ax=ax, facecolor="none", edgecolor="k", lw=3)
-    ctx.add_basemap(ax=ax, source=ctx.providers.CartoDB.Voyager)
-    ax.set_axis_off()
-    ax.set_title("Fortaleza", fontsize=20)
-    st.pyplot(fig)
+#     Fortaleza_polygon.to_crs("EPSG:3857").plot(ax=ax, facecolor="none", edgecolor="k", lw=3)
+#     ctx.add_basemap(ax=ax, source=ctx.providers.CartoDB.Voyager)
+#     ax.set_axis_off()
+#     ax.set_title("Fortaleza", fontsize=20)
+#     st.pyplot(fig)
 
     ## Inicio do grafico de barras ##
 
