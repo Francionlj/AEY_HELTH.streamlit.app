@@ -64,7 +64,7 @@ if search_button:
         ponto = Point(longitude, latitude)
         for index, row in df_fortaleza_hexagons[['geometry','Zonas']].iterrows():
                 if row['geometry'].contains(ponto):
-                    st.sidebar.write(f'O emderco esta contido na Zona {row['Zonas']}')
+                    st.sidebar.write(f'O emderco esta contido na {row["Zonas"]}')
                     zona_encontrada = row['geometry']
                     # nome_zona = row['Zonas']
                     break
