@@ -118,20 +118,20 @@ if search_button:
     ## Inicio do grafico de barras ##
 
     ###Preparando dados do grafico ##
-    df_totais_fortaleza = pd.DataFrame(df_zona.iloc[-1].astype(str).sort_values(ascending=False))
-    df_totais_fortaleza['CNAE FISCAL PRINCIPAL'] = list(df_totais_fortaleza.index)
-    df_totais = pd.merge(df_totais_fortaleza, df_nomes_fantazia, how = 'right', on = 'CNAE FISCAL PRINCIPAL').drop_duplicates()
-    df_totais.sort_values( ascending=False, by='Total', inplace = True)
-    lista_nomes = list(df_totais['TIPO'])
-    lista_quantidades = list(df_totais['Total'])
-    fig2 = px.bar(x=lista_nomes, y=lista_quantidades)
-    fig2.update_xaxes(tickangle=90, showticklabels=False)  # Remove os rótulos do eixo x
-    fig2.update_layout(
-        title='Gráfico de Barras dos CNAIs Mais Utilizados em Fortaleza',
-        xaxis_title='Lista de CNAIs',
-        yaxis_title='Quantidades'
-    )
-    st.plotly_chart(fig2)
+    # df_totais_fortaleza = pd.DataFrame(df_zona.iloc[-1].astype(str).sort_values(ascending=False))
+    # df_totais_fortaleza['CNAE FISCAL PRINCIPAL'] = list(df_totais_fortaleza.index)
+    # df_totais = pd.merge(df_totais_fortaleza, df_nomes_fantazia, how = 'right', on = 'CNAE FISCAL PRINCIPAL').drop_duplicates()
+    # df_totais.sort_values( ascending=False, by='Total', inplace = True)
+    # lista_nomes = list(df_totais['TIPO'])
+    # lista_quantidades = list(df_totais['Total'])
+    # fig2 = px.bar(x=lista_nomes, y=lista_quantidades)
+    # fig2.update_xaxes(tickangle=90, showticklabels=False)  # Remove os rótulos do eixo x
+    # fig2.update_layout(
+    #     title='Gráfico de Barras dos CNAIs Mais Utilizados em Fortaleza',
+    #     xaxis_title='Lista de CNAIs',
+    #     yaxis_title='Quantidades'
+    # )
+    # st.plotly_chart(fig2)
 
 
 # fim da Pagina
