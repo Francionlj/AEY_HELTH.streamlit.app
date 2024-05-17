@@ -1,0 +1,11 @@
+warnings
+numpy
+pandas
+streamlit
+geopandas
+contextily
+plotly
+matplotlib
+tesspy
+geopy
+shapely
