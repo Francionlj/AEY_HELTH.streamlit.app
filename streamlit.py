@@ -1,36 +1,33 @@
-import warnings
 import numpy as np
 import pandas as pd 
 import streamlit as st
 import geopandas as gpd
-
 import contextily as ctx
 import plotly.express as px
-import matplotlib.pyplot as plt
-
 from tesspy import Tessellation
+import matplotlib.pyplot as plt
+from shapely.geometry import Point
 from geopy.geocoders import Nominatim
-from geopy.exc import GeocoderUnavailable
-from shapely.geometry import Point, Polygon
 
 # carregando arquivos #
 ## Df lat lon ##
-df_lat_lon = pd.read_csv('D:\AEY HELTH\harquivos_streamlit\df_lat_lon.csv', sep = ';')
+df_lat_lon = pd.read_csv('./harquivos_streamlit/df_lat_lon.csv', sep = ';')
 
-## Df zona ##
-df_zona = pd.read_csv('D:\AEY HELTH\harquivos_streamlit\df_zona_cnae.csv', sep = ';', index_col=False)
+## zonas ##
+df_zona = pd.read_csv('./harquivos_streamlit/df_zona_cnae.csv', sep = ';', index_col=False)
 df_zona.set_index('Unnamed: 0', inplace=True)
 
-## df nome fantazia ##
+## Df nome fantasia ##
 df_nomes_fantazia = df_lat_lon[['CNAE FISCAL PRINCIPAL', 'TIPO']]
 df_nomes_fantazia['CNAE FISCAL PRINCIPAL'] = df_nomes_fantazia['CNAE FISCAL PRINCIPAL'].astype(str).tolist()
+
 
 ## carregando mapa de fortaleza ##
 Fortaleza = Tessellation("Fortaleza")
 Fortaleza_polygon = Fortaleza.get_polygon()
 
 ## df hexagon ##
-df_fortaleza_hexagons = gpd.read_file(r'D:\AEY HELTH\harquivos_streamlit\Fortaleza_hexagons.shp')
+df_fortaleza_hexagons = gpd.read_file(r'./harquivos_streamlit/Fortaleza_hexagons.shp')
 
 # inicio da pagina #
 st.set_page_config(
