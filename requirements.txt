@@ -2,11 +2,10 @@ warnings
 numpy
 pandas
 streamlit
-geopandas
+geopandas == 0.14.4
 contextily
 plotly
 matplotlib
 tesspy
 geopy
 shapely
-geopandas 
